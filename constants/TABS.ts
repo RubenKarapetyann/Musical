@@ -3,9 +3,9 @@ import Profile from "../screens/Profile/Profile"
 import Search from "../screens/Search/Search"
 import { ITab } from "../types/Tabs-Types"
 
-const HOME : string = "home"
-const SEARCH : string = "search"
-const PROFILE : string = "profile"
+export const HOME : string = "home"
+export const SEARCH : string = "search"
+export const PROFILE : string = "profile"
 
 export const TABS_MAP = {
     [HOME] : {
