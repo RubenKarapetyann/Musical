@@ -7,5 +7,6 @@ export enum colors {
     main = "#70e000",
     lightMain = "#9ef01a",
     strongMain = "#38b000",
-    overMain = "#008000"
+    overMain = "#008000",
+    textGray = "#B3B3B3"
 }
