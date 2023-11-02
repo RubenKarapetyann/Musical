@@ -7,5 +7,6 @@ export interface ITab{
     activeIcon : string,
     screen : FunctionComponent,
     name : string,
-    headerLeft? : ReactNode
+    headerLeft? : ReactNode,
+    headerRight? : ReactNode
 }

@@ -60,7 +60,8 @@ export default function TabsProvider() {
                         headerStyle : {
                             backgroundColor : colors.black
                         },
-                        headerLeft : ()=> <>{tab.headerLeft}</>
+                        headerLeft : ()=> <>{tab.headerLeft}</>,
+                        headerRight : ()=> <>{tab.headerRight}</>
                     }}             
                 />
             })}
