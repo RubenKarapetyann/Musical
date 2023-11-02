@@ -1,13 +1,20 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import Icon from "../../../../../components/global/Icon/Icon";
 import styles from "./HeaderRight.css";
+import { TOOLS_ARR } from "../../../../../constants/HOME_TOOLS_STACK";
 
 export default function HeaderRight(){
     return (
         <View style={styles.container}>
-            <Icon name="notifications" size={25}/>
-            <Icon name="time" size={25}/>
-            <Icon name="settings-sharp" size={25}/>
+            {TOOLS_ARR.map(stack=>{
+                return (
+                    <Icon 
+                        name={stack.icon}
+                        size={25}
+                        key={stack.id}
+                    />
+                )
+            })}
         </View>
     )
 }
