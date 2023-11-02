@@ -1,4 +1,5 @@
 import Home from "../screens/Home/Home"
+import HomeHeaderLeft from "../screens/Home/components/header/HeaderLeft/HeaderLeft"
 import Profile from "../screens/Profile/Profile"
 import Search from "../screens/Search/Search"
 import { ITab } from "../types/Tabs-Types"
@@ -14,7 +15,8 @@ export const TABS_MAP = {
         icon : "home-outline",
         activeIcon : "home",
         screen : Home,
-        name : HOME
+        name : HOME,
+        headerLeft : HomeHeaderLeft()
     },
     [SEARCH] : {
         displayName : "Search",

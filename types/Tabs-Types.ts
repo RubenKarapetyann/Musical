@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import { FunctionComponent, ReactNode } from "react";
 
 export interface ITab{ 
     displayName : string,
@@ -6,5 +6,6 @@ export interface ITab{
     icon : string,
     activeIcon : string,
     screen : FunctionComponent,
-    name : string
+    name : string,
+    headerLeft? : ReactNode
 }
