@@ -8,3 +8,9 @@ export type HomeCollectorProps = {
     list : Array<MassiveCardProps>,
     title : string
 }
+export type IconProps = {
+    name : string,
+    size? : number,
+    color? : string,
+    notifications? : number
+}

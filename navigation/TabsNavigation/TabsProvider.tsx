@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { HOME, TABS_ARR, TABS_MAP } from "../../constants/TABS"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import { colors } from "../../constants/COLORS"
+import { Text } from "react-native"
 
 const Tab = createBottomTabNavigator()
 
@@ -40,7 +41,14 @@ export default function TabsProvider() {
                 tabBarLabelStyle : {
                     marginBottom : 8,
                 },
-                // tabBarShowLabel : false
+                // tabBarShowLabel : false,
+                headerTitleStyle : {
+                    fontSize : 30
+                },
+                headerStyle : {
+                    // height : 200
+                },
+                // headerLeft : ()=><Text>header</Text>
             })}
         >
             {TABS_ARR.map(tab=>{

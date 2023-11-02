@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { ACCESS_TOKEN, SERVICE } from "../../constants/API";
 import { MassiveCardProps } from "../../types/Props-Types";
 import HomeCollector from "../../components/collectors/HomeCollector/HomeCollector";
+import Icon from "../../components/global/Icon/Icon";
 
 const arr = [
     {
@@ -47,6 +48,7 @@ export default function Home(){
     return (
         <View>
             <HomeCollector list={arr} title="albums"/>
+            <Icon name="notifications" notifications={5}/>
         </View>
     )
 }
