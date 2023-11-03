@@ -1,3 +1,5 @@
+import { navigationType } from "./Global-Types"
+
 export type MassiveCardProps = {
     name : string,
     image : string,
@@ -12,5 +14,9 @@ export type IconProps = {
     name : string,
     size? : number,
     color? : string,
-    notifications? : number
+    notifications? : number,
+    pressHandle : ()=>void
+}
+export type navigationProps = {
+    navigation : navigationType
 }

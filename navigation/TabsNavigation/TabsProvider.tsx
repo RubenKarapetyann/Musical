@@ -6,7 +6,7 @@ import { colors } from "../../constants/COLORS"
 const Tab = createBottomTabNavigator()
 
 
-export default function TabsProvider() {
+export default function TabsProvider() {    
     return (
         <Tab.Navigator 
             initialRouteName={HOME}
@@ -54,15 +54,15 @@ export default function TabsProvider() {
                     component={tab.screen}
                     name={tab.name}
                     key={tab.id}       
-                    options={{
+                    options={()=>({
                         title : tab.displayName,
                         headerTintColor : "white",
+                        headerShown : tab.needHeader,
                         headerStyle : {
                             backgroundColor : colors.black
                         },
-                        headerLeft : ()=> <>{tab.headerLeft}</>,
-                        headerRight : ()=> <>{tab.headerRight}</>
-                    }}             
+                        headerLeft : tab.HeaderLeft,
+                    })}             
                 />
             })}
         </Tab.Navigator>

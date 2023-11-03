@@ -1,11 +1,13 @@
-import Notifications from "../screens/tools/Notifications/Notifications"
-import Recent from "../screens/tools/Recent/Recent"
-import Settings from "../screens/tools/Settings/Settings"
+import Main from "../screens/Home/components/Main/Main"
+import Notifications from "../screens/Home/components/tools/Notifications/Notifications"
+import Recent from "../screens/Home/components/tools/Recent/Recent"
+import Settings from "../screens/Home/components/tools/Settings/Settings"
 import { IHomeToolStack } from "../types/HomeToolsStack-Types"
 
-export const NOTIFICATIONS = "notifications"
-export const RECENT = "recent"
-export const SETTINGS = "settings"
+export const NOTIFICATIONS : string = "notifications"
+export const RECENT : string = "recent"
+export const SETTINGS : string = "settings"
+export const HOME : string = "main-home"
 
 export const TOOLS_MAP = {
     [NOTIFICATIONS] : {
@@ -28,6 +30,13 @@ export const TOOLS_MAP = {
         icon : "settings-sharp",
         stack : SETTINGS,
         screen : Settings
+    },
+    [HOME] : {
+        displayName : "Home",
+        id : 4,
+        icon : "",
+        stack : HOME,
+        screen : Main 
     }
 }
 

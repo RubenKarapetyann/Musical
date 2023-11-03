@@ -1,10 +1,10 @@
-import { Text, View } from "react-native";
 import MassiveCard from "../../components/cards/MassiveCard/MassiveCard";
 import { useState, useEffect } from "react"
 import { ACCESS_TOKEN, SERVICE } from "../../constants/API";
 import { MassiveCardProps } from "../../types/Props-Types";
 import HomeCollector from "../../components/collectors/HomeCollector/HomeCollector";
 import Icon from "../../components/global/Icon/Icon";
+import HomeToolsStackProvider from "../../navigation/HomeToolsStackNavigation/HomeToolsStackProvider";
 
 const arr = [
     {
@@ -46,9 +46,10 @@ export default function Home(){
     // },[])
 
     return (
-        <View>
-            <HomeCollector list={arr} title="albums"/>
-            <Icon name="notifications" notifications={5}/>
-        </View>
+        <>
+            {/* <HomeCollector list={arr} title="albums"/> */}
+            {/* <Icon name="notifications" notifications={5}/> */}
+            <HomeToolsStackProvider/>
+        </>
     )
 }

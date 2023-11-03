@@ -1,6 +1,4 @@
 import Home from "../screens/Home/Home"
-import HomeHeaderLeft from "../screens/Home/components/header/HeaderLeft/HeaderLeft"
-import HomeHeaderRight from "../screens/Home/components/header/HeaderRight/HeaderRight"
 import Profile from "../screens/Profile/Profile"
 import Search from "../screens/Search/Search"
 import { ITab } from "../types/Tabs-Types"
@@ -17,8 +15,7 @@ export const TABS_MAP = {
         activeIcon : "home",
         screen : Home,
         name : HOME,
-        headerLeft : HomeHeaderLeft(),
-        headerRight : HomeHeaderRight()
+        needHeader : false,
     },
     [SEARCH] : {
         displayName : "Search",
@@ -26,7 +23,8 @@ export const TABS_MAP = {
         icon : "search-outline",
         activeIcon : "search",
         screen : Search,
-        name : SEARCH
+        name : SEARCH,
+        needHeader : true,
     },
     [PROFILE] : {
         displayName : "Profile",
@@ -34,7 +32,8 @@ export const TABS_MAP = {
         icon : "albums-outline",
         activeIcon : "albums",
         screen : Profile,
-        name : PROFILE
+        name : PROFILE,
+        needHeader : true,
     }
 }
 

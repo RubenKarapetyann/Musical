@@ -4,7 +4,7 @@ import { IconProps } from "../../../types/Props-Types";
 import styles from "./Icon.css";
 import { useState } from "react"
 
-export default function Icon({ name, size=50, color="white", notifications } : IconProps){
+export default function Icon({ name, size=50, color="white", notifications, pressHandle } : IconProps){
     const [focused, setFocused] = useState<boolean>(false)
     const mouseOn = ()=> setFocused(true)
     const mouseOut = ()=> setFocused(false)
@@ -14,6 +14,7 @@ export default function Icon({ name, size=50, color="white", notifications } : I
             <TouchableOpacity
                 onPressIn={mouseOn}
                 onPressOut={mouseOut}
+                onPress={pressHandle}
                 style={{
                     width : focused ? size/1.1 : size,
                     height : focused ? size/1.1 : size,
