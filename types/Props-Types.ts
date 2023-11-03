@@ -1,4 +1,4 @@
-import { navigationType } from "./Global-Types"
+import { apiContentType, navigationType } from "./Global-Types"
 
 export type MassiveCardProps = {
     name : string,
@@ -7,7 +7,7 @@ export type MassiveCardProps = {
     id : string | number
 }
 export type HomeCollectorProps = {
-    list : Array<MassiveCardProps>,
+    list : Array<apiContentType>,
     title : string
 }
 export type IconProps = {

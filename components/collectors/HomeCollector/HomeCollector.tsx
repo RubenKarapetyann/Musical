@@ -17,7 +17,7 @@ export default function HomeCollector({ list, title } : HomeCollectorProps){
                 {list.map(item=>{
                     return <MassiveCard
                         name={item.name}
-                        image={item.image}
+                        image={item.images[0].url}
                         key={item.id}
                         id={item.id}
                     />
