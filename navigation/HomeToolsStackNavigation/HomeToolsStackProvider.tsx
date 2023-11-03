@@ -15,8 +15,13 @@ export default function HomeToolsStackProvider(){
             initialRouteName={HOME_MAIN}
             screenOptions={()=>({
                 headerTitleStyle : {
-                    fontSize : 30
-                }
+                    fontSize : 30,
+                    color : "white"
+                },
+                headerStyle : {
+                    backgroundColor : colors.black,
+                },
+                headerTintColor :"white"
             })}
         >
             <Stack.Screen 
@@ -38,6 +43,9 @@ export default function HomeToolsStackProvider(){
                         component={tool.screen}
                         name={tool.stack}
                         key={tool.id}
+                        options={()=>({
+                            title : tool.displayName
+                        })}
                     />
                 )
             })}

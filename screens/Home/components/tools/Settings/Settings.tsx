@@ -1,7 +1,10 @@
-import { Text } from "react-native";
+import { ScrollView } from "react-native";
+import styles from "./Settings.css";
 
 export default function Settings(){
     return (
-        <Text>Settings</Text>
+        <ScrollView style={styles.container}>
+
+        </ScrollView>
     )
 }

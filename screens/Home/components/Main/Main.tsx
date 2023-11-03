@@ -28,7 +28,7 @@ export default function Main(){
                         id : Math.random(),
                         title : "Playlist"
                     },    
-                ])
+                ])      
             })
         }
         getAlbums()
