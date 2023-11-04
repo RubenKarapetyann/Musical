@@ -1,4 +1,5 @@
 import Home from "../screens/Home/Home"
+import Playlist from "../screens/Playlist/Playlist"
 import Profile from "../screens/Profile/Profile"
 import Search from "../screens/Search/Search"
 import { ITab } from "../types/Tabs-Types"
@@ -6,6 +7,8 @@ import { ITab } from "../types/Tabs-Types"
 export const HOME : string = "home"
 export const SEARCH : string = "search"
 export const PROFILE : string = "profile"
+export const PLAYLIST : string = "playlist"
+
 
 export const TABS_MAP = {
     [HOME] : {
@@ -16,6 +19,7 @@ export const TABS_MAP = {
         screen : Home,
         name : HOME,
         needHeader : false,
+        needTab : true
     },
     [SEARCH] : {
         displayName : "Search",
@@ -25,6 +29,7 @@ export const TABS_MAP = {
         screen : Search,
         name : SEARCH,
         needHeader : true,
+        needTab : true
     },
     [PROFILE] : {
         displayName : "Profile",
@@ -34,11 +39,23 @@ export const TABS_MAP = {
         screen : Profile,
         name : PROFILE,
         needHeader : true,
+        needTab : true
+    },
+    [PLAYLIST] : {
+        displayName : "Playlist",
+        id : 4,
+        icon : "",
+        activeIcon : "",
+        screen : Playlist,
+        name : PLAYLIST,
+        needHeader : false,
+        needTab : false
     }
 }
 
 export const TABS_ARR : ITab[] = [
     TABS_MAP[HOME],
     TABS_MAP[SEARCH],
-    TABS_MAP[PROFILE]
+    TABS_MAP[PROFILE],
+    TABS_MAP[PLAYLIST]
 ]

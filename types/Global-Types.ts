@@ -4,7 +4,7 @@ export type navigationType = {
 export type apiContentType = {
     name : string,
     images: apiImageType[],
-    id : string | number
+    id : string
 }
 export type apiImageType = {
     url : string,

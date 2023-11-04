@@ -2,6 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { HOME, TABS_ARR, TABS_MAP } from "../../constants/TABS"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import { colors } from "../../constants/COLORS"
+import Playlist from "../../screens/Playlist/Playlist"
 
 const Tab = createBottomTabNavigator()
 
@@ -17,6 +18,8 @@ export default function TabsProvider() {
                 tabBarActiveTintColor : colors.main,
                 tabBarInactiveTintColor : colors.lightGray,
                 tabBarIcon : ({ focused, color, size })=>{
+                    if(!TABS_MAP[route.name].needTab)
+                        return
                     const icon = focused ? "activeIcon" : "icon"
                     const iconName : string = TABS_MAP[route.name][icon]
 
@@ -62,6 +65,9 @@ export default function TabsProvider() {
                             backgroundColor : colors.black
                         },
                         headerLeft : tab.HeaderLeft,
+                        tabBarItemStyle : {
+                            display : tab.needTab ? "flex" : "none"
+                        }
                     })}             
                 />
             })}

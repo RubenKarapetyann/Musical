@@ -6,9 +6,10 @@ import { GET } from "../../../../constants/API"
 import HomeCollector from "../../../../components/collectors/HomeCollector/HomeCollector"
 import endpoints from "../../../../endpoints/endpoints"
 import { collectionType } from "../../../../types/Global-Types"
+import { navigationProps } from "../../../../types/Props-Types"
 
 
-export default function Main(){
+export default function Main({ navigation } : navigationProps){
     const [data, setData] = useState<collectionType[]>([])
 
     useEffect(()=>{
@@ -34,10 +35,14 @@ export default function Main(){
         getAlbums()
     },[])
 
+    const SingleItemHandle = (id : string)=>{
+        navigation.navigate("playlist", { id })
+    }
+
     return (
         <ScrollView style={styles.container}>
             {data.length ? data.map(data=>{
-                return <HomeCollector list={data.items} title={data.title} key={data.id}/>
+                return <HomeCollector list={data.items} title={data.title} key={data.id} handle={SingleItemHandle}/>
             }) : null}
         </ScrollView> 
     )

@@ -4,11 +4,13 @@ export type MassiveCardProps = {
     name : string,
     image : string,
     subTitle? : string,
-    id : string | number
+    id : string,
+    handle : (id : string)=> void
 }
 export type HomeCollectorProps = {
     list : Array<apiContentType>,
-    title : string
+    title : string,
+    handle : (id : string)=> void
 }
 export type IconProps = {
     name : string,

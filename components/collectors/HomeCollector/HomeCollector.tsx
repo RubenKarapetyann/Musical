@@ -3,7 +3,7 @@ import { HomeCollectorProps } from "../../../types/Props-Types"
 import MassiveCard from "../../cards/MassiveCard/MassiveCard"
 import styles from "./HomeCollector.css"
 
-export default function HomeCollector({ list, title } : HomeCollectorProps){
+export default function HomeCollector({ list, title, handle } : HomeCollectorProps){
     return (
         <View style={styles.wrapper}>
             <View style={styles.titleContainer}>
@@ -16,6 +16,7 @@ export default function HomeCollector({ list, title } : HomeCollectorProps){
             }}>
                 {list.map(item=>{
                     return <MassiveCard
+                        handle={handle}
                         name={item.name}
                         image={item.images[0].url}
                         key={item.id}

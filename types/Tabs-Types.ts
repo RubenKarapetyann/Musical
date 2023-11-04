@@ -8,5 +8,6 @@ export interface ITab{
     screen : FunctionComponent,
     name : string,
     HeaderLeft? : FunctionComponent,
-    needHeader : boolean
+    needHeader : boolean,
+    needTab : boolean
 }
