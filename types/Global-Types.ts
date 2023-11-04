@@ -14,3 +14,22 @@ export type collectionType = {
     title : string,
     items : apiContentType[]
 }
+export type artistType = {
+    name : string,
+    id : string
+}
+export type apiPlaylistType = {
+    name : string,
+    images : apiImageType[],
+    artists : artistType[],
+    label : string,
+    total_tracks : number,
+    tracks : {
+        items : trackType[]
+    }
+}
+export type trackType = {
+    artists : artistType[],
+    id : string,
+    name : string
+}

@@ -20,5 +20,11 @@ export type IconProps = {
     pressHandle : ()=>void
 }
 export type navigationProps = {
-    navigation : navigationType
+    navigation? : navigationType,
+    route? : { params : { id : string } }
+}
+export type imageProps = {
+    url : string,
+    size? : number,
+    styles? : object
 }

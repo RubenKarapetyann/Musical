@@ -42,13 +42,13 @@ export const TABS_MAP = {
         needTab : true
     },
     [PLAYLIST] : {
-        displayName : "Playlist",
+        displayName : "",
         id : 4,
         icon : "",
         activeIcon : "",
         screen : Playlist,
         name : PLAYLIST,
-        needHeader : false,
+        needHeader : true,
         needTab : false
     }
 }

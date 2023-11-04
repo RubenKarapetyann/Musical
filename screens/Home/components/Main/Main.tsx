@@ -8,7 +8,6 @@ import endpoints from "../../../../endpoints/endpoints"
 import { collectionType } from "../../../../types/Global-Types"
 import { navigationProps } from "../../../../types/Props-Types"
 
-
 export default function Main({ navigation } : navigationProps){
     const [data, setData] = useState<collectionType[]>([])
 
@@ -36,7 +35,7 @@ export default function Main({ navigation } : navigationProps){
     },[])
 
     const SingleItemHandle = (id : string)=>{
-        navigation.navigate("playlist", { id })
+        navigation && navigation.navigate("playlist", { id })
     }
 
     return (
