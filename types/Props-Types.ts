@@ -1,4 +1,4 @@
-import { apiContentType, navigationType } from "./Global-Types"
+import { apiContentType, artistType, navigationType } from "./Global-Types"
 
 export type MassiveCardProps = {
     name : string,
@@ -7,6 +7,18 @@ export type MassiveCardProps = {
     id : string,
     handle : (id : string, type : string)=> void,
     type : string
+}
+export type SmallCardProps = {
+    name : string,
+    // image : string,
+    subTitle? : string,
+    id : string,
+    artists : artistType[],
+    image : string
+    // handle : (id : string, type : string)=> void,
+}
+export type PlaylistCollectorProps = {
+    list : Array<SmallCardProps>
 }
 export type HomeCollectorProps = {
     list : Array<apiContentType>,
@@ -28,5 +40,5 @@ export type navigationProps = {
 export type imageProps = {
     url : string,
     size? : number,
-    styles? : object
+    styles? : object,
 }

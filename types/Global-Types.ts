@@ -33,5 +33,6 @@ export type apiPlaylistType = {
 export type trackType = {
     artists : artistType[],
     id : string,
-    name : string
+    name : string,
+    image : string
 }
