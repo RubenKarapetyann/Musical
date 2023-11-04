@@ -5,12 +5,14 @@ export type MassiveCardProps = {
     image : string,
     subTitle? : string,
     id : string,
-    handle : (id : string)=> void
+    handle : (id : string, type : string)=> void,
+    type : string
 }
 export type HomeCollectorProps = {
     list : Array<apiContentType>,
     title : string,
-    handle : (id : string)=> void
+    handle : (id : string, type : string)=> void,
+    type : string
 }
 export type IconProps = {
     name : string,
@@ -21,7 +23,7 @@ export type IconProps = {
 }
 export type navigationProps = {
     navigation? : navigationType,
-    route? : { params : { id : string } }
+    route? : { params : { id : string, type : string } }
 }
 export type imageProps = {
     url : string,

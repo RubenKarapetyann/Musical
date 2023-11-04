@@ -11,14 +11,16 @@ import { apiPlaylistType } from "../../types/Global-Types"
 export default function Playlist({ route } : navigationProps){
     const [playlist, setPlaylist] = useState<apiPlaylistType | null>(null)
     const id = route?.params.id
+    const type : "playlist" | "album" = route?.params.type as "playlist" | "album"
+
 
     useEffect(()=>{
         const getPlaylist = async ()=>{
-            const result = await WebApiCalls(endpoints(id).playlist, GET)
+            const result = await WebApiCalls(endpoints(id)[type], GET)
             setPlaylist(result)
         }
         getPlaylist()
-    },[])
+    },[id])
 
     if(!playlist){
         return

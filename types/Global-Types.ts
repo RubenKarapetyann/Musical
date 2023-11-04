@@ -1,5 +1,6 @@
 export type navigationType = {
-    navigate : Function
+    navigate : Function,
+    goBack? : Function
 }
 export type apiContentType = {
     name : string,
@@ -12,7 +13,8 @@ export type apiImageType = {
 export type collectionType = {
     id : number,
     title : string,
-    items : apiContentType[]
+    items : apiContentType[],
+    type : string
 }
 export type artistType = {
     name : string,

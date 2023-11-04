@@ -3,6 +3,7 @@ import { HOME, TABS_ARR, TABS_MAP } from "../../constants/TABS"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import { colors } from "../../constants/COLORS"
 import Playlist from "../../screens/Playlist/Playlist"
+import BackButton from "../../components/global/BackButton/BackButton"
 
 const Tab = createBottomTabNavigator()
 
@@ -57,14 +58,14 @@ export default function TabsProvider() {
                     component={tab.screen}
                     name={tab.name}
                     key={tab.id}       
-                    options={()=>({
+                    options={({ navigation })=>({
                         title : tab.displayName,
                         headerTintColor : "white",
                         headerShown : tab.needHeader,
                         headerStyle : {
                             backgroundColor : colors.black
                         },
-                        headerLeft : tab.HeaderLeft,
+                        headerLeft : tab.needTab ? tab.HeaderLeft : ()=> <BackButton navigation={navigation}/>,
                         tabBarItemStyle : {
                             display : tab.needTab ? "flex" : "none"
                         }
