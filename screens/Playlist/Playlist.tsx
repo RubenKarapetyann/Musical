@@ -9,9 +9,10 @@ import { ScrollView } from "react-native"
 import { apiPlaylistType, trackType } from "../../types/Global-Types"
 import styles from "./Playlist.css"
 import PlaylistCollector from "../../components/collectors/PlaylistCollector/PlaylistCollector"
+import { TRACK } from "../../constants/TABS"
 
 
-export default function Playlist({ route } : navigationProps){
+export default function Playlist({ route, navigation } : navigationProps){
     const [playlist, setPlaylist] = useState<apiPlaylistType | null>(null)
     const id = route?.params.id
     const type : "playlist" | "album" = route?.params.type as "playlist" | "album"
@@ -63,6 +64,10 @@ export default function Playlist({ route } : navigationProps){
         return
     }
 
+    const goToTrack = (id : string)=>{
+        navigation?.navigate(TRACK,{ id })
+    }
+
     return (
         <ScrollView>
             <ImageBackground
@@ -80,7 +85,7 @@ export default function Playlist({ route } : navigationProps){
                 <Text style={styles.label}>{playlist.label}</Text>
             </ImageBackground>
             {/* <SmallCard/> */}
-            <PlaylistCollector list={playlist.tracks.items}/>
+            <PlaylistCollector list={playlist.tracks.items} handle={goToTrack}/>
                 
             {/* <Text style={{color : "white"}}>{JSON.stringify(playlist,undefined,2)}</Text> */}
         </ScrollView>

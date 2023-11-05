@@ -2,13 +2,14 @@ import Home from "../screens/Home/Home"
 import Playlist from "../screens/Playlist/Playlist"
 import Profile from "../screens/Profile/Profile"
 import Search from "../screens/Search/Search"
+import Track from "../screens/Track/Track"
 import { ITab } from "../types/Tabs-Types"
 
 export const HOME : string = "home"
 export const SEARCH : string = "search"
 export const PROFILE : string = "profile"
 export const PLAYLIST : string = "playlist"
-
+export const TRACK : string = "track"
 
 export const TABS_MAP = {
     [HOME] : {
@@ -49,7 +50,19 @@ export const TABS_MAP = {
         screen : Playlist,
         name : PLAYLIST,
         needHeader : true,
-        needTab : false
+        needTab : false,
+        backButtonIcon : "arrow-left"
+    },
+    [TRACK] : {
+        displayName : "",
+        id : 5,
+        icon : "",
+        activeIcon : "",
+        screen : Track,
+        name : TRACK,
+        needHeader : true,
+        needTab : false,
+        backButtonIcon : "chevron-down"
     }
 }
 
@@ -57,5 +70,6 @@ export const TABS_ARR : ITab[] = [
     TABS_MAP[HOME],
     TABS_MAP[SEARCH],
     TABS_MAP[PROFILE],
-    TABS_MAP[PLAYLIST]
+    TABS_MAP[PLAYLIST],
+    TABS_MAP[TRACK]
 ]

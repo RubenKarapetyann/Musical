@@ -65,7 +65,7 @@ export default function TabsProvider() {
                         headerStyle : {
                             backgroundColor : colors.black
                         },
-                        headerLeft : tab.needTab ? tab.HeaderLeft : ()=> <BackButton navigation={navigation}/>,
+                        headerLeft : tab.needTab ? tab.HeaderLeft : ()=> <BackButton icon={tab.backButtonIcon} navigation={navigation}/>,
                         tabBarItemStyle : {
                             display : tab.needTab ? "flex" : "none"
                         }

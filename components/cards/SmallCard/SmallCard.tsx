@@ -2,9 +2,10 @@ import { View, Image, Text, TouchableOpacity } from "react-native"
 import { SmallCardProps } from "../../../types/Props-Types"
 import styles from "./SmallCard.css"
 
-export default function SmallCard({ name, artists, image } : SmallCardProps){
+export default function SmallCard({ name, artists, image, handle, id } : SmallCardProps){
+    const pressHandle = ()=> handle(id)
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={pressHandle}>
             <>
                 <View>
                     <Image

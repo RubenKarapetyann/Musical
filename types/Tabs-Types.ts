@@ -9,5 +9,6 @@ export interface ITab{
     name : string,
     HeaderLeft? : FunctionComponent,
     needHeader : boolean,
-    needTab : boolean
+    needTab : boolean,
+    backButtonIcon? : string
 }
