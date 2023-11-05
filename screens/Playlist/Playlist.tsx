@@ -9,7 +9,6 @@ import { ScrollView } from "react-native"
 import { apiPlaylistType, trackType } from "../../types/Global-Types"
 import styles from "./Playlist.css"
 import PlaylistCollector from "../../components/collectors/PlaylistCollector/PlaylistCollector"
-import { TRACK } from "../../constants/TABS"
 
 
 export default function Playlist({ route, navigation } : navigationProps){
@@ -31,7 +30,7 @@ export default function Playlist({ route, navigation } : navigationProps){
                     tracks: {
                         items: result.tracks.items.map((track : any)=>({
                             artists : track.track.album.artists,
-                            id : track.track.album.id,
+                            id : track.track.id,
                             name : track.track.album.name,
                             image : track.track.album.images[0].url
                         }))
@@ -65,7 +64,7 @@ export default function Playlist({ route, navigation } : navigationProps){
     }
 
     const goToTrack = (id : string)=>{
-        navigation?.navigate(TRACK,{ id })
+        navigation?.navigate("track",{ id })
     }
 
     return (
